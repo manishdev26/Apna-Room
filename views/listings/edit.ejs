@@ -1,0 +1,114 @@
+
+<%- layout('layouts/boilerplate') %>
+  <body>
+    
+    <!-- yeha put request bheje hai esiliye 
+        const methodOverride = require("method-override");
+        app.use(methodOverride("_method"));
+    ye dono use kiye hai -->
+
+
+
+     <!-- ⬇️ niche jitna bhi hai un sabhi ko agar row div folder de denge to vah sabhi ek row mai convert ho jayega 
+      but agar humko ek row mai 3-4 column hi rahna chahiye to column class vala div use karna parega -->
+
+    <!-- offset-2 means left se space -->
+
+    <div class="row mt-3">
+      <div class="col-8 offset-2">
+
+        
+        <h3>Edit your Listing</h3>
+
+
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
+
+          <div class="mb-3">
+
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required/>
+          
+             <!-- for correct dalne par -->
+            <div class="valid-feedback">Title looks like good!</div> 
+
+          </div>
+          
+
+          <div class="mb-3">
+
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required>
+            <%= listing.description %></textarea>
+            
+            <!-- for incorrect dalne par -->
+          <div class="invalid-feedback">Please write a short discriptions</div> 
+          </div>
+          
+        <div class="mb-3">
+
+          <label for="image" class="form-label">Image Link</label>
+            <input name="listing[image][url]" value="<%= listing.image.url %>" type="text" class="form-control" required />
+
+            <!-- for incorrect dalne par -->
+  
+          <div class="invalid-feedback">Please enter a valid URL</div> 
+        </div>
+
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+
+            <label for="price" class="form-label">Price</label>
+          <input name="listing[price]" value="<%= listing.price %>"  class="form-control" required/>
+
+          <!-- for incorrect dalne par -->
+  
+          <div class="invalid-feedback">Please enter a valid Price</div> 
+
+          </div>
+
+          <div class="mb-3 col-md-8">
+
+            <label for="country" class="form-label">Country</label>
+            <input
+            name="listing[country]"
+            value="<%= listing.country %>"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- for incorrect dalne par -->
+          <div class="invalid-feedback">Please enter a country name</div> 
+
+          </div>
+          
+        </div>
+          
+          
+          
+          
+          
+          <div class="mb-3">
+
+            <label for="location" class="form-label">Location</label>
+            <input
+            name="listing[location]"
+            value="<%= listing.location %>"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- for incorrect dalne par -->
+          <div class="invalid-feedback">Please enter a lucation</div> 
+          </div>
+          
+          <button class="btn btn-dark edit-btn mt-3">Edit</button>
+          <br><br>
+        </form>
+      </div>
+    </div>
+  </body>
+
+   <!-- just body ke khatam hone ke pahle use kare ye boostrap ke validation part se liye hai (js ki sari boostrap properties ab use kr skte hai)   js file link -->

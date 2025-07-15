@@ -1,0 +1,105 @@
+<%- layout('layouts/boilerplate') %>
+
+<body>
+      
+   
+
+
+    <!-- ek form hai jo (add)submit krne ke bad post ho jayega /listing route par -->
+
+      <!-- ⬇️ niche jitna bhi hai un sabhi ko agar row div folder de denge to vah sabhi ek row mai convert ho jayega 
+      but agar humko ek row mai 3-4 column hi rahna chahiye to column class vala div use karna parega -->
+
+    <!-- offset-2 means left se space -->
+
+    <div class="row mt-3">
+      <div class="col-8  offset-2">
+         <h3>Create a New Listing</h3>
+
+         <!-- novalidate, class="needs-validation"  ye dono validation ke liye use kiya  gaya hai
+       -->
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+      <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control" required />
+      
+      <!-- for correct dalne par -->
+      <div class="valid-feedback">Title looks like good!</div> 
+    </div>
+     
+      
+      <!--  required   set krne par agar vah nhi dala khali hi chhod diya to form kahega please enter correct  -->
+
+
+      <div class="mb-3">
+         <label for="description" class="form-label" >Description</label>
+        <textarea
+        name="listing[description]"
+        placeholder="enter description"
+        class="form-control"
+        required
+      ></textarea>
+      
+      <!-- for incorrect dalne par -->
+          <div class="invalid-feedback">Please write a short discriptions</div> 
+      </div>
+      
+      <div class="mb-3">
+        <label for="image" class="form-label" >Image Link</label>
+
+        <input
+        name="listing[image][url]"
+        placeholder="enter image URL/Link"
+        type="text"
+        class="form-control"
+        
+      />
+      </div>
+      
+<!-- ⬇️ niche agar humko price aur country ko ek row mai dena hai to un dono ko row div folder de denge to vah sabhi ek row mai convert ho jayega 
+      but agar humko ek row mai 3-4 column hi rahna chahiye to column class vala div use karna parega -->
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label" required>Price</label>
+          <input name="listing[price]" placeholder="1200" type="number"  class="form-control" required/>
+          
+    <!-- for incorrect dalne par -->
+  
+          <div class="invalid-feedback">Please enter a valid Price</div> 
+
+          
+        </div>
+        
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label" required>Country</label>
+          <input name="listing[country]" placeholder="India" type="text"  class="form-control" required/>
+        
+        <!-- for incorrect dalne par -->
+          <div class="invalid-feedback">Please enter a country name</div> 
+
+
+        </div>
+      </div>
+      <div class="mb-3">
+         <label for="location" class="form-label" >Location</label>
+        <input
+        name="listing[location]"
+        placeholder="Jaipur,Rajasthan"
+        type="text"
+        class="form-control"
+        required
+      />
+
+      <!-- for incorrect dalne par -->
+          <div class="invalid-feedback">Please enter a lucation</div> 
+      </div>
+    
+    
+      <button class="btn btn-dark add-btn mt-3">Add</button>   
+      <br><br>       
+    
+    </form>
+    </div>
+    </div>  
+</body>
