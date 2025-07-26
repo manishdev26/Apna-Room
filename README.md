@@ -1,8 +1,8 @@
-# 🏠 ApnaRoom.com
+# 🏠 ApnaRoom
 
 **ApnaRoom.com** is an online room rental platform where users can find and book rooms on a **daily, weekly, or monthly** basis. It’s built to help students, working professionals, and travelers easily find affordable accommodations in just a few clicks.
 
-🔗 **Live Project Link**: [https://www.apnaroom.com](https://www.apnaroom.com)
+🔗 **Live Project Link**: )
 
 ---
 
@@ -67,7 +67,7 @@ Developing **ApnaRoom.com** during my internship at **Invigo Info Tech** helped 
 
 ---
 
-📌 **Check it out now:** [https://www.apnaroom.com](https://www.apnaroom.com)
+📌 **Check it out now:** )
 
 ---
 
